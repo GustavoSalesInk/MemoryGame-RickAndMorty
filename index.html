@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <!--o uso do 'defer', referencia a inicialição do script, como prioridade-->
+    <script defer src="./js/login.js"></script>
+
+    <title>Memory Game | Login</title>
+  </head>
+  <body>
+    
+    <form class="login-form">
+
+      <div class="login__header">
+        <img src="./images/brain.png" alt="Brain Icon">
+        <h1>Memory Game</h1>
+      </div>
+      <!--O 'input', serve para a caixa aonde vai ser inserido o nome-->
+      <input type="text" placeholder="Name" class="login__input">
+      <!--O 'button', serve para inicializar o login-->
+      <button type="submit" class="login__button" disabled>Play</button>
+
+    </form>
+
+  </body>
+</html>
