@@ -1,5 +1,5 @@
 # MemoryGame-RickAndMorty
-Em andamento...
+Em construção...
 
 Construção de Pagina com um jogo da memória.
 
