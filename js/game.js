@@ -1,16 +1,24 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
+
 
 const characters = [
     'beth',
     'jerry',
-    'jessica',
+    /*'jessica',*/
     'morty',
     'pessoa-passaro',
-    'pickle-rick',
+    /*'pickle-rick',*/
     'rick',
     'summer',
     'meeseeks',
-    'scroopy',
+    /*'scroopy',*/
+    'snowball',
+    /*'tammy',*/
+    /*'krombopulos',*/
+    'mr-nimbus',
+    'mr-poopybutthole'
 ];
 
 const createElement = (tag, className) => {
@@ -26,7 +34,8 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length === 20) {
-        alert('Parabéns, parece que você não é tão bostinha, assim!');
+        clearInterval(this.loop);
+        alert(`Parabéns ${spanPlayer.innerHTML}! Parece que você não é tão bostinha, assim! Seu tempo foi: ${timer.innerHTML}`);
     }
 }
 
@@ -114,4 +123,19 @@ const loadgame = () => {
     });
 }
 
-loadgame();
+const startTime = () => {
+
+    /*ele vai fazer um loop, de a cada segundo(1000), ocorrer um acrescimo */
+    this.loop = setInterval(() => {
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+    }, 1000);
+
+}
+
+window.onload = () => {
+    /*span.inner, é a passagem do valor dentro do HTML e localStorage é recuperação do valor na caixa do jogador*/
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    startTime();
+    loadgame();
+}
